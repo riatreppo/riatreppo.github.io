@@ -70,8 +70,21 @@ li {
 }
 
 .gallery-item {
-  padding: .75rem;
+  position: relative;
+  margin: .75rem;
   display: inline-block;
+
+  a {
+    display: inline-block;
+  }
+}
+
+.gallery-description {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #fcce04;
 }
 
 .introduction-image {

@@ -8,10 +8,15 @@ id: 1
 <ul class="gallery">
   {% assign pictures = site.static_files %}
   {% for picture in pictures %}
-    {% assign path = picture.path | split: '/' %}
-    {% if path[1] == 'bilder' and path[2] == 'klein' %}
-      <li class="gallery-item"><a href="../bilder/gross/{{ path.last }}"><img border="0" src="../bilder/klein/{{ path.last }}" width="150" height="150"></a></li>
+    {% assign path = picture.path | remove_first: '/' | split: '/' %}
+    {% if path.first == 'images' and path[1] == 'ria_tapisserie' and path[2] == 'klein' %}
+      <li class="gallery-item"><a href="images/ria_tapisserie/gross/{{ path.last }}"><img border="0" src="images/ria_tapisserie/klein/{{ path.last }}" width="150" height="150"></a></li>
+    {% endif %}
+  {% endfor %}
+  {% for picture in pictures %}
+    {% assign path = picture.path | remove_first: '/' | split: '/' %}
+    {% if path.first == 'images' and path[1] == 'bilder' and path[2] == 'klein' %}
+      <li class="gallery-item"><a href="images/bilder/gross/{{ path.last }}"><img border="0" src="images/bilder/klein/{{ path.last }}" width="150" height="150"></a></li>
     {% endif %}
   {% endfor %}
 </ul>
-</div>

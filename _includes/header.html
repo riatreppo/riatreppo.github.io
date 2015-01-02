@@ -1,0 +1,16 @@
+<header class="header">
+    <ul class="brand">
+      <li class="brand-item">Ria Treppo</li>
+      <li class="brand-item">Architektur</li>
+      <li class="brand-item">Tapisserie</li>
+    </ul>
+
+    <nav class="nav">
+      {% assign pages = site.html_pages | sort: "id" %}
+      {% for page in pages %}
+        {% if page.title and page.id %}
+        <li class="nav-item"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </nav>
+</header>

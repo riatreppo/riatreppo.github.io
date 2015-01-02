@@ -1,0 +1,17 @@
+---
+layout: default
+title: Bilder
+id: 1
+---
+
+<h1 class="headline">{{ page.title }}</h1>
+<ul class="gallery">
+  {% assign pictures = site.static_files %}
+  {% for picture in pictures %}
+    {% assign path = picture.path | split: '/' %}
+    {% if path[1] == 'bilder' and path[2] == 'klein' %}
+      <li class="gallery-item"><a href="../bilder/gross/{{ path.last }}"><img border="0" src="../bilder/klein/{{ path.last }}" width="150" height="150"></a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+</div>

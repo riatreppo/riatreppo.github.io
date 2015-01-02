@@ -3,73 +3,59 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #ccc6c4;
-  line-height: 1.5rem
-}
+  line-height: 1.5rem; }
 
 a, a:hover, a:visited {
-  color: #fcce04;
-}
+  color: #fcce04; }
 
 ul {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 li {
-  list-style: none;
-}
+  list-style: none; }
 
-.head, .main {
+.header, .main {
   margin: 1rem auto;
-  max-width: 48rem;
-}
+  max-width: 48rem; }
 
 .brand, .nav {
-  padding: 1rem 0;
-}
+  padding: 1rem 0; }
 
 .brand-item {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.6rem;
-}
+  font-size: 1.6rem; }
 
 .brand-item, .nav-item {
-  display: inline;
-}
+  display: inline; }
 
 .brand-item + .brand-item:before, .nav-item + .nav-item:before {
   content: "+";
   color: #fcce04;
-  padding: 0 .5em;
+  padding: 0 .4em;
   font-size: 1.3em;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .nav-item {
   text-transform: uppercase;
-  font-size: 1.3rem;
-}
+  font-size: 1.3rem; }
 
 .nav-item a {
   text-decoration: none;
-  color: #ccc6c4;
-}
+  color: #ccc6c4; }
 
 .headline {
   text-transform: uppercase;
   font-weight: normal;
   font-size: 1.1rem;
-  margin-top: 1.5rem;
-}
+  margin-top: 1.5rem; }
 
 .gallery-item {
   padding: .75rem;
-  display: inline-block;
-}
+  display: inline-block; }
 
 .introduction-image {
   float: right;
-  padding: .75rem;
-}
+  padding: .75rem; }

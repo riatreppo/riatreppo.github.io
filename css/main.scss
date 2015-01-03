@@ -3,16 +3,22 @@
 ---
 @charset "utf-8";
 
+$primary-background: #741214;
+$font-color: #ccc6c4;
+$highlight-font-color: #fff;
+$primary-color: #fcce04;
+$vertical-rule: 1.5rem;
+
 body {
-  background-color: #741214;
+  background-color: $primary-background;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
-  color: #ccc6c4;
-  line-height: 1.5rem
+  color: $font-color;
+  line-height: $vertical-rule;
 }
 
 a, a:hover, a:visited {
-  color: #fcce04;
+  color: $primary-color;
 }
 
 ul {
@@ -24,54 +30,71 @@ li {
   list-style: none;
 }
 
-.header, .main {
-  margin: 1rem auto;
+@mixin centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin main-el {
   max-width: 48rem;
+  margin-top: $vertical-rule;
+  margin-bottom: $vertical-rule;
 }
 
-.brand, .nav {
-  padding: 1rem 0;
-}
-
-.brand-item {
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-.brand-item, .nav-item {
+@mixin inlined {
   display: inline;
 }
 
-.brand-item + .brand-item:before, .nav-item + .nav-item:before {
-  content: "+";
-  color: #fcce04;
-  padding: 0 .4em;
-  font-size: 1.3em;
+@mixin separated-list-item {
+  & + &:before {
+    content: "+";
+    color: $primary-color;
+    padding: 0 .4em;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+}
+
+.header, .main {
+  @include centered;
+  @include main-el;
+}
+
+.brand, .nav {
+  padding: $vertical-rule / 2 0;
+}
+
+.brand-item {
+  @include inlined;
+  @include separated-list-item;
+  text-transform: uppercase;
+  color: $highlight-font-color;
   font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 2 * $vertical-rule;
 }
 
 .nav-item {
+  @include inlined;
+  @include separated-list-item;
   text-transform: uppercase;
   font-size: 1.3rem;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #ccc6c4;
+  a {
+    text-decoration: none;
+    color: $font-color;
+  }
 }
 
 .headline {
   text-transform: uppercase;
   font-weight: normal;
   font-size: 1.1rem;
-  margin-top: 1.5rem;
+  margin-top: $vertical-rule;
 }
 
 .gallery-item {
   position: relative;
-  margin: .75rem;
+  margin: $vertical-rule / 2;
   display: inline-block;
 
   a {
@@ -84,10 +107,10 @@ li {
   bottom: 0;
   width: 100%;
   text-align: center;
-  color: #fcce04;
+  color: $primary-color;
 }
 
 .introduction-image {
   float: right;
-  padding: .75rem;
+  padding: $vertical-rule / 2;
 }

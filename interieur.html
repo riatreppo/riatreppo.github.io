@@ -26,11 +26,11 @@ id: 3
     {% assign path = file.path | remove_first: '/' | split: '/' %}
     {% if path[0] == site.image_folder and path[1] == folder and path[2] == 'klein' %}
       {% if path.last contains 'vorher' %}
-        <li class="gallery-item"><a href="{{ site.image_folder }}/interieur/gross/{{ path.last }}"><img src="{{ site.image_folder }}/interieur/klein/{{ path.last }}" width="150" height="150"></a><div class="gallery-description">vorher</div></li>
+      <li class="gallery-item"><a href="{{ site.image_folder }}/{{ folder }}/gross/{{ path.last }}"><img src="{{ site.image_folder }}/{{ folder }}/klein/{{ path.last }}" width="150" height="150" alt="{{ folder }} {{ forloop.index }}"></a><div class="gallery-description">vorher</div></li>
       {% elsif path.last contains 'nachher' %}
-        <li class="gallery-item"><a href="{{ site.image_folder }}/interieur/gross/{{ path.last }}"><img src="{{ site.image_folder }}/interieur/klein/{{ path.last }}" width="150" height="150"></a><div class="gallery-description">nachher</div></li>
+      <li class="gallery-item"><a href="{{ site.image_folder }}/{{ folder }}/gross/{{ path.last }}"><img src="{{ site.image_folder }}/{{ folder }}/klein/{{ path.last }}" width="150" height="150" alt="{{ folder }} {{ forloop.index }}"></a><div class="gallery-description">nachher</div></li>
       {% else %}
-        <li class="gallery-item"><a href="{{ site.image_folder }}/interieur/gross/{{ path.last }}"><img src="{{ site.image_folder }}/interieur/klein/{{ path.last }}" width="150" height="150"></a></li>
+      <li class="gallery-item"><a href="{{ site.image_folder }}/{{ folder }}/gross/{{ path.last }}"><img src="{{ site.image_folder }}/{{ folder }}/klein/{{ path.last }}" width="150" height="150" alt="{{ folder }} {{ forloop.index }}"></a></li>
       {% endif %}
     {% endif %}
   {% endfor %}

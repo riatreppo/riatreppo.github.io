@@ -11,7 +11,7 @@ id: 1
     {% for file in site.static_files %}
       {% assign path = file.path | remove_first: '/' | split: '/' %}
       {% if path[0] == site.image_folder and path[1] == folder and path[2] == 'klein' %}
-        <li class="gallery-item"><a href="{{ site.image_folder }}/{{ folder }}/gross/{{ path.last }}"><img border="0" src="{{ site.image_folder }}/{{ folder }}/klein/{{ path.last }}" width="150" height="150"></a></li>
+      <li class="gallery-item"><a href="{{ site.image_folder }}/{{ folder }}/gross/{{ path.last }}"><img border="0" src="{{ site.image_folder }}/{{ folder }}/klein/{{ path.last }}" width="150" height="150" alt="{{ folder }} {{ forloop.index }}"></a></li>
       {% endif %}
     {% endfor %}
   {% endfor %}

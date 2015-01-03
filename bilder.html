@@ -6,17 +6,13 @@ id: 1
 
 <h1 class="headline">{{ page.title }}</h1>
 <ul class="gallery">
-  {% assign pictures = site.static_files %}
-  {% for picture in pictures %}
-    {% assign path = picture.path | remove_first: '/' | split: '/' %}
-    {% if path.first == 'images' and path[1] == 'ria_tapisserie' and path[2] == 'klein' %}
-      <li class="gallery-item"><a href="images/ria_tapisserie/gross/{{ path.last }}"><img border="0" src="images/ria_tapisserie/klein/{{ path.last }}" width="150" height="150"></a></li>
-    {% endif %}
-  {% endfor %}
-  {% for picture in pictures %}
-    {% assign path = picture.path | remove_first: '/' | split: '/' %}
-    {% if path.first == 'images' and path[1] == 'bilder' and path[2] == 'klein' %}
-      <li class="gallery-item"><a href="images/bilder/gross/{{ path.last }}"><img border="0" src="images/bilder/klein/{{ path.last }}" width="150" height="150"></a></li>
-    {% endif %}
+  {% assign folders = 'ria_tapisserie, bilder' | split: ', ' %}
+  {% for folder in folders %}
+    {% for file in site.static_files %}
+      {% assign path = file.path | remove_first: '/' | split: '/' %}
+      {% if path[0] == site.image_folder and path[1] == folder and path[2] == 'klein' %}
+        <li class="gallery-item"><a href="{{ site.image_folder }}/{{ folder }}/gross/{{ path.last }}"><img border="0" src="{{ site.image_folder }}/{{ folder }}/klein/{{ path.last }}" width="150" height="150"></a></li>
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 </ul>

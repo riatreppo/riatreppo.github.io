@@ -1,17 +1,15 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
 
 $primary-background: #741214;
-$font-color: #ccc6c4;
+$font-color: #e5dfdd;
 $highlight-font-color: #fff;
 $primary-color: #fcce04;
 $vertical-rule: 1.5rem;
 
 body {
   background-color: $primary-background;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: $font-color;
   line-height: $vertical-rule;
